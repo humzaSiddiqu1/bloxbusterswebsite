@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bloxbusters • MMO</title>
+  <meta name="description" content="Explore our Elden Ring-inspired MMO world and concept art." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Bloxbusters home">
+        <span class="brand__mark">BB</span>
+        <span class="brand__name">BLOX<span class="muted">BUSTERS</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="mmo.html" class="active">MMO</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn btn--ghost" href="#" id="discordLink">Discord</a>
+      </nav>
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobileNav container" id="mobileNav" hidden>
+      <a href="mmo.html" class="active">MMO</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn--ghost" href="#" id="discordLinkMobile">Discord</a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="top">
+    <!-- MMO Hero section -->
+    <section class="mmo-hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">An Elden Ring‑inspired journey</p>
+          <h1 class="hero__title">Our MMO Adventure</h1>
+          <p class="hero__subtitle">Prepare for a dark, epic journey through a world of mystery and danger. This is where your legend begins.</p>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="placeholder-img">MMO Art Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="section mmo-gallery">
+      <div class="container">
+        <h2 class="section__title">Concept Art Gallery</h2>
+        <p class="section__subtitle">Take a peek at some early concept art. Replace these placeholders with your own artwork.</p>
+        <div class="gallery-grid">
+          <div class="gallery-item placeholder-img">Art 1</div>
+          <div class="gallery-item placeholder-img">Art 2</div>
+          <div class="gallery-item placeholder-img">Art 3</div>
+          <div class="gallery-item placeholder-img">Art 4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Description section -->
+    <section class="section mmo-description">
+      <div class="container">
+        <h2 class="section__title">About the MMO</h2>
+        <p class="section__subtitle">Use this space to describe the setting, mechanics and lore of your game. Talk about the rich environments, challenging bosses and the freedom to forge your own path in our immersive world.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© <span id="year"></span> Bloxbusters – Hytale fan project.</p>
+        <a class="muted" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie preferences" hidden>
+    <div class="cookie__box">
+      <div>
+        <strong>Cookie Options</strong>
+        <p class="muted">We use cookies to enhance your experience. Choose your preference.</p>
+      </div>
+      <div class="cookie__actions">
+        <button class="btn btn--ghost" id="cookieReject">Reject</button>
+        <button class="btn" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Highlight active nav link on this page
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === 'mmo.html') {
+          link.classList.add('current');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

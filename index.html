@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bloxbusters</title>
+  <meta name="description" content="Bloxbusters – play, progress and produce in a Hytale-inspired world." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Bloxbusters home">
+        <span class="brand__mark">BB</span>
+        <span class="brand__name">BLOX<span class="muted">BUSTERS</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="mmo.html">MMO</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--ghost" href="#" id="discordLink">Discord</a>
+      </nav>
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobileNav container" id="mobileNav" hidden>
+      <a href="mmo.html">MMO</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--ghost" href="#" id="discordLinkMobile">Discord</a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="top">
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">A new home for adventurers and creators.</p>
+          <h1 class="hero__title">Bloxbusters</h1>
+          <p class="hero__subtitle">Your gateway to classic fun, deep role‑playing and cinematic storytelling.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#" id="ctaJoin">Join our community</a>
+            <a class="btn btn--ghost" href="#roadmap">Explore Roadmap</a>
+          </div>
+          <!-- Launch card with countdown -->
+          <div class="launchCard" role="group" aria-label="Launch countdown">
+            <div class="launchCard__meta">
+              <span class="pill">Launch</span>
+              <span class="metaText" id="launchDateText">TBD</span>
+              <span class="dot">•</span>
+              <span class="metaText" id="launchStatus">Coming soon</span>
+            </div>
+            <div class="countdown" aria-live="polite">
+              <div class="timeBox"><div class="num" id="dd">—</div><div class="lbl">days</div></div>
+              <div class="timeBox"><div class="num" id="hh">—</div><div class="lbl">hours</div></div>
+              <div class="timeBox"><div class="num" id="mm">—</div><div class="lbl">minutes</div></div>
+              <div class="timeBox"><div class="num" id="ss">—</div><div class="lbl">seconds</div></div>
+            </div>
+            <p class="fine muted">Our timeline is subject to change; join the adventure and watch it unfold.</p>
+          </div>
+        </div>
+        <!-- Hero visual placeholder -->
+        <div class="hero__visual" aria-hidden="true">
+          <!-- Use this area for a hero image or graphic. We use a placeholder box for now. -->
+          <div class="placeholder-img">Image placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap section -->
+    <section class="section" id="roadmap">
+      <div class="container">
+        <h2 class="section__title">Roadmap</h2>
+        <p class="section__subtitle">We’re taking things one step at a time. Here’s how we grow Bloxbusters.</p>
+        <div class="grid cards">
+          <article class="card">
+            <div class="card__tag">Phase 1</div>
+            <h3>Arcade Hub</h3>
+            <ul>
+              <li>Setup home world and minigame lobbies</li>
+              <li>Launch initial slate of arcade classics</li>
+              <li>Host community playtests</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__tag">Phase 2</div>
+            <h3>MMO Slice</h3>
+            <ul>
+              <li>Introduce our first region</li>
+              <li>Develop stamina‑based combat</li>
+              <li>Design a challenging boss encounter</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__tag">Phase 3</div>
+            <h3>Creative Studio</h3>
+            <ul>
+              <li>Provide sets and lighting presets</li>
+              <li>Build tools for camera paths and puppeteering</li>
+              <li>Offer comprehensive creator documentation</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="card__tag">Phase 4</div>
+            <h3>Future Seasons</h3>
+            <ul>
+              <li>Add more minigames and MMO content</li>
+              <li>Expand the creative toolbox</li>
+              <li>Scale infrastructure and community support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section__title">FAQ</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>What is Bloxbusters?</summary>
+            <p>Bloxbusters is an independent community project aiming to deliver a Hytale-inspired game experience. We’re building a home for arcade games, an Elden Ring-style MMO and a collaborative movie studio.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Is Bloxbusters affiliated with Hytale?</summary>
+            <p>No, we are fans and creators; Bloxbusters is not affiliated with Hytale or Hypixel Studios.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How can I get involved?</summary>
+            <p>Join our Discord community to follow development, provide feedback and eventually contribute to content creation or playtesting.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© <span id="year"></span> Bloxbusters – Hytale fan project.</p>
+        <a class="muted" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cookie banner -->
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie preferences" hidden>
+    <div class="cookie__box">
+      <div>
+        <strong>Cookie Options</strong>
+        <p class="muted">We use cookies to enhance your experience. Choose your preference.</p>
+      </div>
+      <div class="cookie__actions">
+        <button class="btn btn--ghost" id="cookieReject">Reject</button>
+        <button class="btn" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
