@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Countdown timer
-  const targetDate = new Date('2026-12-31T23:59:59Z'); // placeholder launch date
+  const targetDate = new Date('2026-01-12T23:59:59Z'); // placeholder launch date
   const dd = document.getElementById('dd');
   const hh = document.getElementById('hh');
   const mm = document.getElementById('mm');
