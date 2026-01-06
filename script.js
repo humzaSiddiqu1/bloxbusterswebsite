@@ -7,16 +7,51 @@ document.addEventListener('DOMContentLoaded', () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Mobile navigation toggle
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) {
-    menuBtn.addEventListener('click', () => {
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      mobileNav.hidden = expanded;
-    });
-  }
+// Mobile navigation toggle (resilient)
+const menuBtn =
+  document.querySelector('[data-menu-btn], #menuBtn, #navToggle');
+const mobileNav =
+  document.querySelector('[data-mobile-nav], #mobileNav, #navMenu');
+
+if (menuBtn && mobileNav) {
+  // Ensure it's a button for accessibility; if it's an <a>, prevent jump
+  menuBtn.addEventListener('click', (e) => {
+    if (menuBtn.tagName === 'A') e.preventDefault();
+
+    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    const next = !expanded;
+
+    menuBtn.setAttribute('aria-expanded', String(next));
+
+    // Use both the hidden attribute and a class in case your CSS uses either
+    mobileNav.hidden = !next;
+    mobileNav.classList.toggle('is-open', next);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+      menuBtn.click();
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (
+      menuBtn.getAttribute('aria-expanded') === 'true' &&
+      !mobileNav.contains(e.target) &&
+      !menuBtn.contains(e.target)
+    ) {
+      menuBtn.click();
+    }
+  });
+
+  // Start state: hide unless aria-expanded="true" is present in HTML
+  const startOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+  mobileNav.hidden = !startOpen;
+  mobileNav.classList.toggle('is-open', startOpen);
+}
+
 
   // Cookie banner
   const cookieBanner = document.getElementById('cookie');
