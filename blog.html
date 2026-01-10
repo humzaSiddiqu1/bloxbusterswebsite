@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bloxbusters • Blog</title>
+  <meta name="description" content="Stay up to date with Bloxbusters news, development progress and community highlights." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Additional styles for blog page -->
+  <link rel="stylesheet" href="extra.css" />
+  <!-- Site favicon -->
+  <link rel="icon" type="image/png" href="assets/BBLogo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Bloxbusters home">
+        <span class="brand__mark">BB</span>
+        <span class="brand__name">BLOX<span class="muted">BUSTERS</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="mmo.html">MMO</a>
+        <a href="store.html">Store</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLink">Discord</a>
+      </nav>
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobileNav container" id="mobileNav" hidden>
+      <a href="mmo.html">MMO</a>
+      <a href="store.html">Store</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLinkMobile">Discord</a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="top">
+    <!-- Blog hero section -->
+    <section class="blog-hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">News & Updates</p>
+          <h1 class="hero__title">Bloxbusters Blog</h1>
+          <p class="hero__subtitle">Catch up on the latest announcements, development progress and community highlights.</p>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <img src="assets/hytaleart6.png" alt="Blog hero art" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog posts list -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Latest Posts</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="thumb">
+              <img src="assets/hytaleart7.webp" alt="Early Access teaser" />
+            </div>
+            <div class="content">
+              <h3>Countdown to Early Access</h3>
+              <div class="meta">By Team Bloxbusters • 14 days ago</div>
+              <p>Only a few weeks remain before early access! We've added over 160 members to our site, welcomed 270 new Discord members and 475 followers on X—momentum is building fast.</p>
+              <a href="#" class="btn btn--ghost">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="thumb">
+              <img src="assets/hytaleart5.webp" alt="Journey to launch" />
+            </div>
+            <div class="content">
+              <h3>Journey to Launch</h3>
+              <div class="meta">By Team Bloxbusters • 1 month ago</div>
+              <p>As we approach early access on January 13th, our story echoes that of Hytale—once uncertain, now brighter than ever.</p>
+              <a href="#" class="btn btn--ghost">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <div class="thumb">
+              <img src="assets/hytaleart1.png" alt="Building a strong community" />
+            </div>
+            <div class="content">
+              <h3>Building a Strong Community</h3>
+              <div class="meta">By Team Bloxbusters • 2 months ago</div>
+              <p>We're dedicated to creating unique worlds, epic adventures and a strong community just like the Hytale Box team.</p>
+              <a href="#" class="btn btn--ghost">Read More</a>
+            </div>
+          </article>
+        </div>
+        <p class="fine muted" style="margin-top:1rem;">Want more? Join our Discord for sneak peeks and live chats.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© <span id="year"></span> Bloxbusters – Hytale fan project.</p>
+        <a class="muted" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Highlight active nav link on this page
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === 'blog.html') {
+          link.classList.add('current');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

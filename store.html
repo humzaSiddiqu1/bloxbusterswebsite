@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bloxbusters • Store</title>
+  <meta name="description" content="Support Bloxbusters by purchasing exclusive founder packs and cosmetic items." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Additional styles for store page -->
+  <link rel="stylesheet" href="extra.css" />
+  <!-- Site favicon -->
+  <link rel="icon" type="image/png" href="assets/BBLogo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Bloxbusters home">
+        <span class="brand__mark">BB</span>
+        <span class="brand__name">BLOX<span class="muted">BUSTERS</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="mmo.html">MMO</a>
+        <a href="store.html" class="active">Store</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#roadmap">Roadmap</a>
+        <a href="index.html#faq">FAQ</a>
+        <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLink">Discord</a>
+      </nav>
+      <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobileNav container" id="mobileNav" hidden>
+      <a href="mmo.html">MMO</a>
+      <a href="store.html" class="active">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLinkMobile">Discord</a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="top">
+    <!-- Store hero section -->
+    <section class="store-hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="kicker">Support the journey</p>
+          <h1 class="hero__title">Bloxbusters Store</h1>
+          <p class="hero__subtitle">Equip yourself with exclusive cosmetics and help fund the adventure. No pay‑to‑win—ever.</p>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="placeholder-img">Store Art Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured items -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Featured Items</h2>
+        <p class="section__subtitle">Pick up limited founder packs and cosmetics. Supplies are limited.</p>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="placeholder-img">Founder Pack</div>
+            <h3>Founder Pack</h3>
+            <p>Secure your place in Bloxbusters with an exclusive title, badge and early beta access.</p>
+            <span class="price">$19.99</span>
+            <a href="#" class="btn">Buy Now</a>
+          </article>
+          <article class="product-card">
+            <div class="placeholder-img">Cosmetic Set</div>
+            <h3>Cosmetic Set</h3>
+            <p>Express yourself with a bundle of unique skins and emotes. Purely cosmetic—no gameplay advantage.</p>
+            <span class="price">$9.99</span>
+            <a href="#" class="btn">Buy Now</a>
+          </article>
+          <article class="product-card">
+            <div class="placeholder-img">Supporter Badge</div>
+            <h3>Supporter Badge</h3>
+            <p>Display your support with a special in‑game badge and recognition in our hall of fame.</p>
+            <span class="price">$4.99</span>
+            <a href="#" class="btn">Buy Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pledge section -->
+    <section class="section pledge">
+      <div class="container">
+        <h2 class="section__title">Our Fair Play Pledge</h2>
+        <ul>
+          <li>We will never sell power boosts—only cosmetics and quality‑of‑life items.</li>
+          <li>Our economy will be transparent, with staff audits and public transaction logs.</li>
+          <li>You, the community, will vote on our monetization mechanics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Support section -->
+    <section class="section support">
+      <div class="container">
+        <h2 class="section__title">Support Bloxbusters</h2>
+        <p class="section__subtitle">Get useful benefits for your account and help us continue to grow our Hytale community.</p>
+        <a class="btn" href="#">View All Merchandise</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© <span id="year"></span> Bloxbusters – Hytale fan project.</p>
+        <a class="muted" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Highlight active nav link on this page
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        if (link.getAttribute('href') === 'store.html') {
+          link.classList.add('current');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

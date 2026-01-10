@@ -6,8 +6,12 @@
   <title>Bloxbusters</title>
   <meta name="description" content="Bloxbusters – play, progress and produce in a Hytale-inspired world." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Set site favicon to Bloxbusters logo -->
+  <link rel="icon" type="image/png" href="assets/BBLogo.png" />
 </head>
 <body>
+  <!-- Particle canvas for home page background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <!-- Header -->
   <header class="header">
     <div class="container header__inner">
@@ -17,18 +21,24 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="mmo.html">MMO</a>
+        <a href="store.html">Store</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn--ghost" href="#" id="discordLink">Discord</a>
+        <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLink">Discord</a>
       </nav>
       <button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
     <!-- Mobile Nav -->
     <div class="mobileNav container" id="mobileNav" hidden>
       <a href="mmo.html">MMO</a>
+      <a href="store.html">Store</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn--ghost" href="#" id="discordLinkMobile">Discord</a>
+      <a class="btn btn--ghost" href="https://discord.gg/Dnh4PAtb9x" id="discordLinkMobile">Discord</a>
     </div>
   </header>
 
@@ -39,7 +49,7 @@
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="kicker">A new home for adventurers and creators.</p>
-          <h1 class="hero__title">Bloxbusters</h1>
+          <h1 class="hero__title">BloxBusters</h1>
           <p class="hero__subtitle">Your gateway to classic fun, deep role‑playing and cinematic storytelling.</p>
           <div class="hero__cta">
             <a class="btn" href="#" id="ctaJoin">Join our community</a>
@@ -64,8 +74,8 @@
         </div>
         <!-- Hero visual placeholder -->
         <div class="hero__visual" aria-hidden="true">
-          <!-- Use this area for a hero image or graphic. We use a placeholder box for now. -->
-          <div class="placeholder-img">Image placeholder</div>
+          <!-- Bloxbusters hero image -->
+          <img src="assets/transparent thing.png" alt="Bloxbusters hero artwork" class="hero-img" />
         </div>
       </div>
     </section>
@@ -162,5 +172,46 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <!-- Simple particle effect for the home page -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('particle-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      const count = 100;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          size: Math.random() * 2 + 1
+        });
+      }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+          ctx.beginPath();
+          // Use accent color for particles to match brand (rgba for subtle effect)
+          ctx.fillStyle = 'rgba(59, 130, 246, 0.6)';
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
 </body>
 </html>
